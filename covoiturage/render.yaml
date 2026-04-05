@@ -4,7 +4,8 @@ services:
     env: docker
     region: frankfurt
     plan: free
-    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerfilePath: Dockerfile
     envVars:
       - key: APP_KEY
         value: base64:6GYVkO6cE1Bwtb7yQjHcvT1bVT4jgivH3q5bD0zHAaA=

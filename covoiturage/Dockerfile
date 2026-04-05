@@ -37,8 +37,9 @@ RUN composer install --optimize-autoloader --no-dev --ignore-platform-reqs
 RUN npm install
 RUN npm run build
 
-# Donner les bons droits aux dossiers de stockage
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+# Donner les bons droits aux dossiers de stockage (Render utilise parfois un autre user que www-data)
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache && \
+    chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Exposer le port par défaut (Render configure $PORT automatiquement, mais 80 est standard pour apache)
 EXPOSE 80

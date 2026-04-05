@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: covoiturage-app
+    env: docker
+    region: frankfurt
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_KEY
+        value: base64:6GYVkO6cE1Bwtb7yQjHcvT1bVT4jgivH3q5bD0zHAaA=
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_URL
+        value: https://covoiturage-app.onrender.com
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: db.htcvtuzbhlnxrhqmjbvh.supabase.co
+      - key: DB_PORT
+        value: "5432"
+      - key: DB_DATABASE
+        value: postgres
+      - key: DB_USERNAME
+        value: postgres
+      - key: DB_PASSWORD
+        value: Okalama2rond#

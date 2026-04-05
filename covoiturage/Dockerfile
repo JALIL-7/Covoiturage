@@ -33,7 +33,7 @@ WORKDIR /var/www/html
 COPY . .
 
 # Installer les dépendances PHP & Node, puis générer les assets
-RUN composer install --optimize-autoloader --no-dev
+RUN composer install --optimize-autoloader --no-dev --ignore-platform-reqs
 RUN npm install
 RUN npm run build
 
